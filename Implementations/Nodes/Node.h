@@ -3,10 +3,12 @@
 
 class Node {
     public:
-        int value;
+        int* value;
         Node* next_node;
-        Node(int value, Node* next_node = nullptr);
-        int get_value();
+        Node(int* value, Node* next_node = nullptr);
+        Node(int value);
+        ~Node();
+        int* get_value();
         void set_next_node(Node* next_node);
         Node* get_next_node();
 };
