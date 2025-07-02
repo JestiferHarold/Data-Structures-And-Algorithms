@@ -1,6 +1,14 @@
 #ifndef ROPE_NODE_H
 #define ROPE_NODE_H
 
+/**
+ * @brief 
+ * 
+ * @related to node.h
+ * 
+ * 
+ */
+
 class RopeNode {
     private:
         int value;

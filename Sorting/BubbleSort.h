@@ -3,7 +3,7 @@
 
 void BubbleSort (int a[], int n) {
     for (int i = 0; i < n; i ++) {
-        for (int j = i; j < n; j ++) {
+        for (int j = i; j < n - 1; j ++) {
             if (a[j] > a[j + 1]) {
                 int temp = a[j + 1];
                 a[j + 1] = a[j];
@@ -11,13 +11,22 @@ void BubbleSort (int a[], int n) {
             }
         }
     }
-} 
+}
 
 void OptimizedBubbleSort(int a[], int n) {
     bool swapped;
     for (int i = 0; i < n; i ++) {
-        swapped = false;
-        for (int j = i; )
+        swapped = true;
+        for (int j = i; j < n - 1; j ++) {
+            if (a[j] < a[j + 1]) {
+                swapped = !swapped;
+                int temp = a[j + 1];
+                a[j + 1] = a[j];
+                a[j] = temp;
+            }
+        }
+
+        if (swapped) return;
     }
 }
 

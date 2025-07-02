@@ -1,3 +1,5 @@
+// -*- lsst-c++ -*-
+
 #include <iostream>
 #include <string>
 #include "..\Nodes\Node.h"
@@ -21,6 +23,12 @@ LinkedList::~LinkedList() {
 
 Node* LinkedList::get_head_node() {
     return this->head;
+}
+
+Node* LinkedList::get_tail_node() {
+    Node* current_node = this->head;
+    for (;current_node != nullptr; current_node = current_node->get_next_node()) 
+    return current_node;
 }
 
 void LinkedList::add_new_head_node(int* value) {
@@ -81,7 +89,16 @@ void LinkedList::insert_node(Node* node, int index) {
     int n = this->get_size();
     
     if ((n - 1 < index) || (index = NULL)) {
-        //last node will be this node;
+        // last node will be this node;
+        Node* current_head = this->head;
+        for(int i = 0;;) {
+            if (current_head != nullptr) continue;
+            current_head = current_head->next_node;
+        }
+
+        current_head->set_next_node(node);
+        node->set_next_node(nullptr);
+        return;
     }
 
     // complete this later
@@ -133,4 +150,18 @@ int LinkedList::get_size() {
 
         current_node = current_node->next_node;
     }
+
+    return i;
+}
+
+void LinkedList::reverse_list() {
+    Node* previous_node = nullptr;
+    Node* current_node = this->head;
+    // Node* next_node = current_node->get_next_node();
+    for (;current_node->get_next_node() != nullptr; previous_node = current_node, current_node = current_node->get_next_node()) {
+        if (previous_node == nullptr) current_node->set_next_node(nullptr); continue;
+        current_node->set_next_node(previous_node);
+    }
+
+    this->head = current_node;
 }
