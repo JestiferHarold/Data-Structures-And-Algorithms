@@ -4,3 +4,7 @@ test.cpp
 *.out
 main.cpp
 .gitignore
+*.txt
+/test
+/Catch2
+/libs

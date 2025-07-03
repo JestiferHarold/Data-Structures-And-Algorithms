@@ -144,14 +144,14 @@ int LinkedList::get_size() {
     Node* current_node = this->head;
     for (;; i++) {
 
-        if (current_node == nullptr) {
+        if (current_node == nullptr || current_node == NULL) {
             return i;
         }
 
         current_node = current_node->next_node;
     }
 
-    return i;
+    return i; //JIC
 }
 
 void LinkedList::reverse_list() {

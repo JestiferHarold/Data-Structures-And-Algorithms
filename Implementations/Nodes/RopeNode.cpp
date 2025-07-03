@@ -14,7 +14,7 @@ RopeNode::~RopeNode() {
 }
 
 int* RopeNode::get_value() {
-    return &this->value
+    return &this->value;
 }
 
 RopeNode* RopeNode::get_next_node() {
@@ -49,5 +49,9 @@ void RopeNode::remove_successive_node() {
 }
 
 void RopeNode::add_new_previous_node(RopeNode* node) {
-    // node->next_node = 
+    this->previous_node = node;
+}
+
+void RopeNode::remove_previous_node() {
+    this->previous_node = nullptr;
 }
