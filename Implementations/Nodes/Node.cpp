@@ -1,22 +1,22 @@
 #include <iostream>
 #include "Node.h"
 
-Node::Node(int* value, Node* next_node) {
+Node::Node(int value, Node* next_node) {
     this->value = value;
     this->next_node = next_node; 
 }
 
-Node::Node(int value) {
-    this->value = &value;
-    this->next_node = nullptr;
-}
+// Node::Node(int value) {
+//     // this->value = &value;
+//     // this->next_node = nullptr;
+// }
 
 Node::~Node() {
-    delete value;
+    delete &value;
     delete next_node;
 }
 
-int* Node::get_value() {
+int Node::get_value() {
     return this->value;
 }
 

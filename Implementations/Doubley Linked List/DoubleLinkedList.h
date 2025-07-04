@@ -83,10 +83,10 @@ class DoubleLinkedList {
          * @brief Inserts a node to the specified index number, if no index value is the passed node will be the tail node
          * 
          * @param node Pointer of the node to be inserted
-         * @param index index at which the node should be inserted, if none passed, index will be -1 and passed node is the new tail node
+         * @param index index at which the node should be inserted, if none passed, index will be 0 and passed node is the new tail node
          * @return void
          */
-        void add_node(RopeNode* node, int index = -1);
+        void add_node(RopeNode* node, uint64_t index = NULL);
 
         /**
          * @brief removes a node based on the value it holds
@@ -104,6 +104,6 @@ class DoubleLinkedList {
          */
         bool remove_node(RopeNode* node);
 
-}
+};
 
 #endif

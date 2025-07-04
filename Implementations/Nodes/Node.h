@@ -9,7 +9,7 @@
 class Node {
     public:
         //Pointer to the value of the node
-        int* value;
+        int value;
 
         //Pointer to the next node, null if none
         Node* next_node;
@@ -21,12 +21,12 @@ class Node {
          * @param next_node pointer to the next node, null if no argument provided
          * @return void
          */
-        Node(int* value, Node* next_node = nullptr);
+        Node(int value, Node* next_node = nullptr);
 
         /**
          * @deprecated not in use
          */
-        Node(int value);
+        // Node(int value);
 
         /**
          * @brief decondtructor to release memory space
@@ -38,9 +38,9 @@ class Node {
         /**
          * @brief gets the value of the current node
          * 
-         * @return pointer to the integer value
+         * @return integer value
          */
-        int* get_value();
+        int get_value();
 
         /**
          * @brief sets the next node of this current node

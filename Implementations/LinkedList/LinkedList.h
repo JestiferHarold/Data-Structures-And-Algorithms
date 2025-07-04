@@ -3,6 +3,8 @@
 #ifndef LinkedList_H 
 #define LinkedList_H
 
+#define NONE 0 
+
 #include <iostream>
 #include <string>
 #include "..\Nodes\Node.h"
@@ -52,7 +54,7 @@ class LinkedList {
          * @param pointer to the integer variable
          * @return void
          */
-        void add_new_head_node(int* value);
+        void add_new_head_node(int value);
 
         /**
          * @brief replaces the first node with the parameter
@@ -93,7 +95,7 @@ class LinkedList {
          * @param index index at which the node should be inserted, null if no value is given
          * @return void
          */
-        void insert_node(Node* node, int index = NULL);
+        void insert_node(Node* node, int index = NONE);
         
         /**
          * @brief removes a node from the linked list
@@ -122,6 +124,8 @@ class LinkedList {
          * @return void
          */
         void reverse_list();
+
+        bool delete_last();
 };
 
 #endif
