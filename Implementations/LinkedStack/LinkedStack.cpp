@@ -30,3 +30,13 @@ void LinkedStack::display() {
         std::cout << "  ^\n |" << std::endl; 
     }
 }
+
+bool LinkedStack::is_empty() { return this->top == nullptr; }
+
+int LinkedStack::size() {
+    if (this->is_empty()) return -1;
+
+    int i = 0;
+    for (Node* curr = this->top; curr != nullptr; curr = curr->get_next_node(), i ++);
+    return i;
+}
