@@ -1,14 +1,23 @@
 #ifndef BUBBLE_SORT_HEADER
 #define BUBBLE_SORT_HEADER
 
-void BubbleSort (int a[], int n) {
+#include <iostream>
+#include <string>
+
+void BubbleSort(int a[], int n) {
     for (int i = 0; i < n; i ++) {
-        for (int j = i; j < n - 1; j ++) {
+        for (int j = i; j < n - 1; j++) {
             if (a[j] > a[j + 1]) {
                 int temp = a[j + 1];
                 a[j + 1] = a[j];
                 a[j] = temp;
             }
+
+            for (int i = 0; i < n; i++) {
+                std::cout << std::to_string(a[i]) + "  ";
+            }
+            std::cout << std::endl;
+
         }
     }
 }
