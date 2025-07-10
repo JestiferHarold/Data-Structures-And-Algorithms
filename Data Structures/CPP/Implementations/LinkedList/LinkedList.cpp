@@ -155,14 +155,14 @@ int LinkedList::get_size() {
         current_node = current_node->next_node;
     }
 
-    return i; //JIC
+    return i; //JIC     
 }
 
 void LinkedList::reverse_list() {
     Node* previous_node = nullptr;
     Node* current_node = this->head;
     Node* next_node = current_node->get_next_node();
-    for (;next_node!= nullptr; current_node->set_next_node(previous_node), previous_node = current_node, current_node = next_node, next_node = next_node->get_next_node());
+    for (;next_node != nullptr; current_node->set_next_node(previous_node), previous_node = current_node, current_node = next_node, next_node = next_node->get_next_node());
 
     current_node->next_node = previous_node;
     this->head = current_node;
